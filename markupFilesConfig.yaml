@@ -1,12 +1,12 @@
 base-path: "/home/rajaram/work/ejp-rd/ERN-common-data-elements/"
 links-base-path: "../"
-output-dir: "output/"
+output-dir: "../output/"
 
 modules:
   pseudonym:
     name: "Pseudonym"
     md-file-name: "pseudonym.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data element pseudonym which is CDE 1.1'Pseudonym'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -19,7 +19,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   personal_information:
     name: "Personal information"
     md-file-name: "personal_information.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements in the CDE 'Personal information' group. It specifically covers the CDE elements 2.1.'Date of Birth' and 2.2.'Sex'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -32,7 +32,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   patient_status:
     name: "Patient status"
     md-file-name: "patient_status.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements in the module 'Patient's status'. It specifically covers the CDE elements 3.1.'Patient's status' and 3.2.'Date of death'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -45,7 +45,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   care_pathway:
     name: "Care pathway"
     md-file-name: "care_pathway.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements related to the 'Care pathway'. It specifically covers the CDE element 4.1.'First contact with specialised centre'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -58,7 +58,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   disease_diagnosis:
     name: "Disease diagnosis"
     md-file-name: "disease_diagnosis.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements related to the diagnosis combining elements from the groups 'Disease history' and 'Diagnosis'. It specifically covers the CDE elements 5.1.'Age at onset', 5.2.'Age at diagnosis' and 6.1.'Diagnosis of the rare disease'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -71,7 +71,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   disease_history:
     name: "Disease history"
     md-file-name: "disease_history.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements related to the diagnosis combining elements from the groups 'Disease history' and 'Diagnosis'. It specifically covers the CDE elements 5.1.'Age at onset', 5.2.'Age at diagnosis' and 6.1.'Diagnosis of the rare disease'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -84,7 +84,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   genetic_diagnosis:
     name: "Genetic diagnosis"
     md-file-name: "genetic_diagnosis.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data element 6.2'Genetic Diagnosis' which is part of the group 'Diagnosis'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -97,7 +97,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   undiagnosed:
     name: "Undiagnosed"
     md-file-name: "undiagnosed.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data element 6.2'Undiagnosed case' which is part of the group 'Diagnosis'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -111,7 +111,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   phenotyping:
     name: "Phenotyping"
     md-file-name: "phenotyping.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data element 6.2'Undiagnosed case' which is part of the group 'Diagnosis'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -124,7 +124,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   consent:
     name: "Consent"
     md-file-name: "consent.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements related to consent from the group 'Research'. It specifically covers the CDE elements 7.1.'Agreement to be contacted for research purposes' and 7.2.'Consent to the reuse of data'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -137,7 +137,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   biobank:
     name: "Biobank"
     md-file-name: "biobank.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data elements related to biological samples stored in a biobank. It specifically covers the CDE elements 7.3.'Biological Sample' and 7.4.'Link to a biobank'.
 These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
@@ -150,7 +150,7 @@ These elements, defined by the JRC, can be found on the EU RD Platform at [this 
   disability:
     name: "Disability"
     md-file-name: "disability.md"
-    template-file: "templates/module.mustache"
+    template-file: "../templates/module.mustache"
     example-rdf:
       text: "This module describes the data element 8.1'Classification of functioning/disability' which is part of the group 'Disability'. These elements, defined by the JRC, can be found on the EU RD Platform at [this link](https://eu-rd-platform.jrc.ec.europa.eu/sites/default/files/CDS/EU_RD_Platform_CDS_Final.pdf)."
       figure-file-path: "images/rdf/10_Disability.png"

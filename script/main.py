@@ -14,7 +14,7 @@ def get_modules_config():
     global LINK_BASE_PATH
     global OUTPUT_DIR
 
-    with open('markupFilesConfig.yaml') as f:
+    with open('../markupFilesConfig.yaml') as f:
         data = yaml.load(f, Loader=SafeLoader)
 
         BASE_PATH = data["base-path"]

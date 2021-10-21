@@ -7,24 +7,17 @@ import os
 import logging
 import sys
 
-BASE_PATH = None
-LINK_BASE_PATH = None
-OUTPUT_DIR = None
+BASE_PATH = os.environ['BASE_PATH']
+LINK_BASE_PATH = os.environ['LINK_BASE_PATH']
+OUTPUT_DIR = os.environ['OUTPUT_DIR']
 
 # set log level
 logging.basicConfig(level=logging.INFO)
 
 def get_modules_config():
     modules = []
-    global BASE_PATH
-    global LINK_BASE_PATH
-    global OUTPUT_DIR
-
     with open('../markupFilesConfig.yaml') as f:
         data = yaml.load(f, Loader=SafeLoader)
-        BASE_PATH = data["base-path"]
-        LINK_BASE_PATH = data["links-base-path"]
-        OUTPUT_DIR = data["output-dir"]
         modules_config = data["modules"]
 
         for key, m in modules_config.items():

@@ -3,10 +3,16 @@ from yaml.loader import SafeLoader
 import ModuleConfig
 import chevron
 from pathlib import Path
+import os
+import logging
+import sys
 
 BASE_PATH = None
 LINK_BASE_PATH = None
 OUTPUT_DIR = None
+
+# set log level
+logging.basicConfig(level=logging.INFO)
 
 def get_modules_config():
     modules = []
@@ -16,7 +22,6 @@ def get_modules_config():
 
     with open('../markupFilesConfig.yaml') as f:
         data = yaml.load(f, Loader=SafeLoader)
-
         BASE_PATH = data["base-path"]
         LINK_BASE_PATH = data["links-base-path"]
         OUTPUT_DIR = data["output-dir"]
@@ -26,20 +31,29 @@ def get_modules_config():
             module = ModuleConfig.ModuleConfig(m["name"], m["md-file-name"], m["template-file"], m["example-rdf"],
                                                m["shex"])
             modules.append(module)
-        print(data)
     return modules
 
-if __name__ == '__main__':
-    modules = get_modules_config()
+def get_file_content(file):
+    try:
+        if os.path.isfile(file):
+            file_txt = Path(file).read_text()
+            return file_txt
+        else:
+            raise Exception("File doesn't exist " + file + ". Check markupFileConfig file.")
+    except Exception as e:
+        logging.error(e)
+        sys.exit(1)
 
+
+def generate_md_files(modules):
     for m in modules:
         rdf_figure_path = LINK_BASE_PATH + m.EXAMPLE_RDF["figure-file-path"]
         rdf_file = BASE_PATH + m.EXAMPLE_RDF["file-path"]
-        rdf_txt = Path(rdf_file).read_text()
+        rdf_txt = get_file_content(rdf_file)
 
         shex_figure_path = LINK_BASE_PATH + m.SHEX["figure-file-path"]
         shex_file = BASE_PATH + m.SHEX["file-path"]
-        shex_txt = Path(rdf_file).read_text()
+        shex_txt = get_file_content(shex_file)
 
         # create module markup
         with open(m.TEMPLATE_FILE, 'r') as f:
@@ -52,4 +66,11 @@ if __name__ == '__main__':
             file = open(output_file, "w")
             file.write(md_text)
             file.close()
+
+
+if __name__ == '__main__':
+    modules = get_modules_config()
+    generate_md_files(modules)
+
+
 

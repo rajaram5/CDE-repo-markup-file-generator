@@ -3,6 +3,10 @@ from yaml.loader import SafeLoader
 import ModuleConfig
 import MarkupFilesUtils
 import os
+import logging
+
+# set log level
+logging.basicConfig(level=logging.INFO)
 
 def get_modules_config():
     modules = []
@@ -18,10 +22,21 @@ def get_modules_config():
     return modules
 
 if __name__ == '__main__':
+    job = os.environ['JOB_TO_RUN']
+    job = job.upper()
     modules = get_modules_config()
-
     mf_utils = MarkupFilesUtils.MarkupFilesUtils(modules)
-    mf_utils.check_md_support_files()
+
+    if job == "CHECK SUPPORTING FILES":
+        logging.info("Check if markup supporting files exits")
+        mf_utils.check_md_support_files()
+    elif job == "UPDATE MD FILES":
+        logging.info("Update markup files")
+        mf_utils.check_md_support_files()
+        mf_utils.generate_md_files()
+    else:
+        logging.info("Unknown job. Please use of these jobs [CHECK SUPPORTING FILES, UPDATE MD FILES]")
+
 
 
 

@@ -2,9 +2,12 @@ import yaml
 from yaml.loader import SafeLoader
 import ModuleConfig
 import MarkupFilesUtils
+import os
+
 def get_modules_config():
     modules = []
-    with open('../markupFilesConfig.yaml') as f:
+    markup_config_file = os.environ['MARKUP_CONFIG_FILE']
+    with open(markup_config_file) as f:
         data = yaml.load(f, Loader=SafeLoader)
         modules_config = data["modules"]
 
